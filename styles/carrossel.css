@@ -1,0 +1,90 @@
+.carrossel__titulo {
+    color: var(--laranja);
+    background-color: var(--cor-cabecalho);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1rem 0 0.5rem 0;
+}
+
+.swiper-slide img {
+    width: 100%;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    display: none;
+}
+
+.swiper-pagination {
+    position: initial;
+    margin: 0.5rem 0;
+}
+
+.card__descricao {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.card__botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.botoes {
+    display: flex;
+}
+
+.card {
+    background: var(--cor-cabecalho);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;    
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.descricao__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.descricao__titulo-livro {
+    color: var(--azul);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.descricao__texto {
+    font-size: 1rem;
+}
+
+.botoes__item {
+    margin: 0 0.7rem;
+}
+
+.botoes__ancora {
+    background-color: var(--laranja);
+    padding: 1rem 2.25rem;
+    color: var(--cor-cabecalho);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.botoes__ancora:hover {
+    background-color: var(--laranja-hover);
+}
+
+.carrossel__titulo__vendas {
+    text-align: center;
+    color: var(--laranja);
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: var(--cor-cabecalho);
+    padding: 1.5rem 0 1rem 0;
+}
+
+.descricao__imagem-estrelas {
+    margin: 0.5rem 0;
+}

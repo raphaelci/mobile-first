@@ -1,0 +1,124 @@
+/*
+A propriedade CSS display: flex; aplicada em um elemento HTML, o transforma em um flex-container e os outros elementos que estão dentro se transformam em flex-itens. Com elementos flexíveis o nosso layout passa a ser responsivo
+
+Combinadores CSS:
+
+seletor descendente (space). O exemplo a seguir seleciona todos <p> elementos dentro <div> elementos:
+    div p {
+        background-color: yellow;
+    }
+
+seletor filho (>). O exemplo a seguir seleciona todos <p> elementos que são filhos imediatas de <div>
+    div > p {
+        background-color: yellow;
+    }
+
+seletor irmão adjacente (+). elementos devem ter o mesmo elemento pai, e "adjacente" significa "imediatamente a seguir". O exemplo a seguir seleciona todos <p> elementos que são colocados imediatamente após o <div>
+    div + p {
+        background-color: yellow;
+    }
+
+seletor irmão em geral (~). O seletor de irmão em geral seleciona todos os elementos que são irmãos de um elemento especificado. O exemplo a seguir seleciona todos <p> elementos que são irmãos de <div>
+    div ~ p {
+        background-color: yellow;
+    }
+
+O exemplo abaixo verifica se o check box está marcado. Se estiver marcado, ele seleciona todos os elementos que são irmãos que possuem a classe .lista-menu
+.container__botao:checked ~ .lista-menu
+    checked - Detecta se o input check-box está preenchido
+
+
+Position: Permite altera o posicionamento de um elemento. Possui 5 valores:
+    static(default), fixed, sticky, relative e absolute
+
+Alterando o position para diferente de static, são liberadas quatro propriedades adicionais:
+    top, bottom, left e right
+
+position: relative - Posicione um elemento com base em sua posição atual sem alterar o layout.
+
+position: absolute - O elemento é posicionado absolutamente em relação ao seu primeiro pai posicionado. 
+
+text-align: Alinha todos os elementos inline
+
+pseudo-classes: é uma palavra-chave adicionada a seletores que especifica um estado especial do elemento selecionado. Exemplo: name_class:hover
+
+pseudo-elementos: é uma palavra-chave adicionada a um seletor que permite que você estilize uma parte específica do elemento selecionado. Exemplo: name_class::placeholder
+
+Swiper JS: Plugin
+
+Para cores feitas com linear-gradient, é necessário
+utilizar background e não background-color
+
+*/
+
+.cabecalho__menu-hamburguer {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.cabecalho {
+    background-color: var(--cor-cabecalho);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem {
+    padding: 1rem;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top:100%;
+    animation-duration: 0.4s;
+    animation-name: slidein;
+    width: 15rem;
+}
+
+.container__botao:checked ~ .lista-menu {
+    display: block;
+}
+
+.lista-menu__titulo, .lista-menu__item {
+    padding: 1rem;
+    background-color: var(--cor-cabecalho);
+}
+
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+.container__botao {
+    display: none;
+}
+
+@keyframes slidein {
+
+    from {
+        width: 10rem;
+    }
+    
+    to {
+        width: 15rem;
+    }
+}
