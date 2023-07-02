@@ -1,56 +1,3 @@
-/*
-A propriedade CSS display: flex; aplicada em um elemento HTML, o transforma em um flex-container e os outros elementos que estão dentro se transformam em flex-itens. Com elementos flexíveis o nosso layout passa a ser responsivo
-
-Combinadores CSS:
-
-seletor descendente (space). O exemplo a seguir seleciona todos <p> elementos dentro <div> elementos:
-    div p {
-        background-color: yellow;
-    }
-
-seletor filho (>). O exemplo a seguir seleciona todos <p> elementos que são filhos imediatas de <div>
-    div > p {
-        background-color: yellow;
-    }
-
-seletor irmão adjacente (+). elementos devem ter o mesmo elemento pai, e "adjacente" significa "imediatamente a seguir". O exemplo a seguir seleciona todos <p> elementos que são colocados imediatamente após o <div>
-    div + p {
-        background-color: yellow;
-    }
-
-seletor irmão em geral (~). O seletor de irmão em geral seleciona todos os elementos que são irmãos de um elemento especificado. O exemplo a seguir seleciona todos <p> elementos que são irmãos de <div>
-    div ~ p {
-        background-color: yellow;
-    }
-
-O exemplo abaixo verifica se o check box está marcado. Se estiver marcado, ele seleciona todos os elementos que são irmãos que possuem a classe .lista-menu
-.container__botao:checked ~ .lista-menu
-    checked - Detecta se o input check-box está preenchido
-
-
-Position: Permite altera o posicionamento de um elemento. Possui 5 valores:
-    static(default), fixed, sticky, relative e absolute
-
-Alterando o position para diferente de static, são liberadas quatro propriedades adicionais:
-    top, bottom, left e right
-
-position: relative - Posicione um elemento com base em sua posição atual sem alterar o layout.
-
-position: absolute - O elemento é posicionado absolutamente em relação ao seu primeiro pai posicionado. 
-
-text-align: Alinha todos os elementos inline
-
-pseudo-classes: é uma palavra-chave adicionada a seletores que especifica um estado especial do elemento selecionado. Exemplo: name_class:hover
-
-pseudo-elementos: é uma palavra-chave adicionada a um seletor que permite que você estilize uma parte específica do elemento selecionado. Exemplo: name_class::placeholder
-
-Swiper JS: Plugin
-
-Para cores feitas com linear-gradient, é necessário
-utilizar background e não background-color
-
-*/
-
 .cabecalho__menu-hamburguer {
     width: 1.5rem;
     height: 1.5rem;
@@ -108,10 +55,6 @@ utilizar background e não background-color
     text-transform: uppercase;
 }
 
-.container__botao {
-    display: none;
-}
-
 @keyframes slidein {
 
     from {
@@ -121,4 +64,110 @@ utilizar background e não background-color
     to {
         width: 15rem;
     }
+}
+
+.opcoes, .container__texto, .container__titulo, .container__botao  {
+    display: none;
+}
+
+.container__botao:checked ~ .container__rotulo > .cabecalho__menu-hamburguer {
+    background-image: url(../img/MenuAberto.svg);
+}
+
+.container__botao:checked ~ .container__rotulo {
+    background: var(--azul-degrade);
+}
+
+@media screen and (min-width: 1024px){
+    .container__titulo, .container__titulo--negrito {
+        font-family: var(--fonte-titulo);
+        font-size: 30px;
+    }
+
+    .container__titulo {
+        font-weight: 400;
+        display: block;
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+    }
+
+    .opcoes__item {
+        padding: 2rem 1rem;
+        text-transform: uppercase;
+    }
+
+    .opcoes__link {
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .container__imagem-favoritos {
+        display: none;
+    }
+
+    .cabecalho__menu-hamburguer {
+        display: none;
+    }
+
+    .opcoes__botao:checked ~ .lista-menu {
+        display: block;
+    }
+
+    .opcoes__botao {
+        display: none;
+    }
+
+    .opcoes__botao:checked ~ .opcoes__rotulo > .opcoes__item {
+        background: var(--azul-degrade);
+        color: var(--cor-cabecalho);
+    }
+
+    .lista-menu__item:hover {
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover > .lista-menu__link{
+        -webkit-text-fill-color: var(--cor-cabecalho);
+        text-decoration: none;
+    }
+
+}
+
+@media screen and (min-width: 1728px) {
+
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .container__texto {
+        display: block;
+    }
+
+    .cabecalho {
+        padding: 0 2rem;
+    }
+
+    .opcoes {
+        margin-right: auto;
+        padding-left: 1rem;
+    }
+
+    .opcoes__item:hover {
+        background: var(--azul-degrade);
+        color: var(--cor-cabecalho)
+    }
+
+    .opcoes__item:hover > .opcoes__link{
+        color: var(--cor-cabecalho);
+    }
+
 }

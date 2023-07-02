@@ -5,7 +5,7 @@
     text-transform: uppercase;
     font-size: 1.1rem;
     font-weight: 700;
-    padding: 1rem 0 0.5rem 0;
+    padding: 2.5rem 0 1rem 0;
 }
 
 .swiper-slide img {
@@ -66,25 +66,81 @@
 
 .botoes__ancora {
     background-color: var(--laranja);
-    padding: 1rem 2.25rem;
+    padding: 1rem 2.15rem;
     color: var(--cor-cabecalho);
     font-weight: 700;
     text-decoration: none;
+    margin-top: 0.5rem;
 }
 
 .botoes__ancora:hover {
     background-color: var(--laranja-hover);
 }
 
-.carrossel__titulo__vendas {
-    text-align: center;
-    color: var(--laranja);
-    font-weight: 700;
-    text-transform: uppercase;
-    background-color: var(--cor-cabecalho);
-    padding: 1.5rem 0 1rem 0;
-}
-
 .descricao__imagem-estrelas {
     margin: 0.5rem 0;
+}
+
+@media screen and (min-width: 1024px){
+    .carrossel__titulo {
+        font-size: 26px;
+    }
+
+    .swiper-pagination {
+        margin: 2rem 0 3rem 0;
+    }
+
+    .swiper {
+        width: 70%;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        display: block;
+    }
+
+    .card {
+        width: 60%;
+        margin: 2rem auto;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .carrossel__container {
+        display: flex;
+        margin: 0 20vw 3rem 20vw;
+        align-items: flex-end;
+        box-sizing: border-box;
+    }
+
+    .swiper-pagination {
+        margin: 1rem 0;
+    }
+
+    .swiper {
+        width: 50%;
+    }
+
+    .card {
+        width: 50%;
+        margin: 2rem auto;
+        margin-left: 3rem;
+    }
+
+    .botoes__ancora {
+        padding: auto;
+        text-align: center;
+    }
+
+    .descricao {
+        margin-right: 3rem;
+    }
+
+    .descricao__titulo {
+        font-size: 32px;
+    }
+
+    .descricao__texto {
+        font-size: 16px;
+    }
+
 }
